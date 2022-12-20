@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-gateway
+  sleuth:
+    sampler:
+      probability: 1.0
+  config:
+    import: optional:configserver:http://localhost:8888
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          # http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/NTD
+#          enabled: true
+#          # http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/NTD
+#          lowerCaseServiceId: true
+
+server:
+  port: 8765
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
